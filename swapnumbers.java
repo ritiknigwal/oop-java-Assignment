@@ -1,26 +1,27 @@
   // Question 04  //
 
-public class Swapnumbers {
+import java.util.Scanner;
 
+public class SwapTwoNumbers {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter first number: ");
+        double num1 = scanner.nextDouble();
+        System.out.print("Enter second number: ");
+        double num2 = scanner.nextDouble();
 
-        float first = 1.20f, second = 2.45f;
+        System.out.println("Before swapping:");
+        System.out.println("Number 1: " + num1);
+        System.out.println("Number 2: " + num2);
 
-        System.out.println("--Before swap--");
-        System.out.println("First number = " + first);
-        System.out.println("Second number = " + second);
+        // Swap numbers
+        double temp = num1;
+        num1 = num2;
+        num2 = temp;
 
-        // Value of first is assigned to temporary
-        float temporary = first;
-
-        // Value of second is assigned to first
-        first = second;
-
-        // Value of temporary (which contains the initial value of first) is assigned to second
-        second = temporary;
-
-        System.out.println("--After swap--");
-        System.out.println("First number = " + first);
-        System.out.println("Second number = " + second);
+        System.out.println("After swapping:");
+        System.out.println("Number 1: " + num1);
+        System.out.println("Number 2: " + num2);
     }
 }
+
