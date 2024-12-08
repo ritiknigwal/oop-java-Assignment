@@ -1,32 +1,33 @@
 //A-1 Ques7
 
-7import java.util.Scanner;
-class Student_Grade
-{
-	public static void main(String[] args)
-	{
-		Scanner input = new Scanner(System.in);
-		System.out.println("Enter The Five Subject Marks :");
-		int m1 = input.nextInt();
-		int m2 = input.nextInt();
-		int m3 = input.nextInt();
-		int m4 = input.nextInt();
-		int m5 = input.nextInt();
-		int tot = m1+m2+m3+m4+m5;
-		float per = tot/5;
-		System.out.println("Total :"+tot);
-		System.out.println("Percentage :"+per);	
-		if(per>=90)
-			System.out.println("Grade A");
-		else if(per>=80)
-			System.out.println("Grade B");
-		else if(per>=70)
-			System.out.println("Grade C");
-		else if(per>=60)
-			System.out.println("Grade D");
-		else if(per>=40)
-			System.out.println("Grade E");
-		else
-			System.out.println("Grade F");
-	}
+import java.util.Scanner;
+
+public class GradingSystem {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter marks (out of 100): ");
+        double marks = scanner.nextDouble();
+
+        double percentage = (marks / 100) * 100;
+        String grade = getGrade(percentage);
+
+        System.out.printf("Percentage: %.2f%%%n", percentage);
+        System.out.println("Grade: " + grade);
+    }
+
+    public static String getGrade(double percentage) {
+        if (percentage >= 90) {
+            return "A";
+        } else if (percentage >= 80) {
+            return "B";
+        } else if (percentage >= 70) {
+            return "C";
+        } else if (percentage >= 60) {
+            return "D";
+        } else if (percentage >= 40) {
+            return "E";
+        } else {
+            return "F";
+        }
+    }
 }
