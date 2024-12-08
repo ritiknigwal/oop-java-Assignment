@@ -1,38 +1,22 @@
    // Question 06  //
 
-public class LeapYear {
+import java.util.Scanner;
 
-  public static void main(String[] args) {
+public class LeapYearChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a year: ");
+        int year = scanner.nextInt();
 
-    // year to be checked
-    int year = 1900;
-    boolean leap = false;
-
-    // if the year is divided by 4
-    if (year % 4 == 0) {
-
-      // if the year is century
-      if (year % 100 == 0) {
-
-        // if year is divided by 400
-        // then it is a leap year
-        if (year % 400 == 0)
-          leap = true;
-        else
-          leap = false;
-      }
-      
-      // if the year is not century
-      else
-        leap = true;
+        if (isLeapYear(year)) {
+            System.out.println(year + " is a leap year.");
+        } else {
+            System.out.println(year + " is not a leap year.");
+        }
     }
-    
-    else
-      leap = false;
 
-    if (leap)
-      System.out.println(year + " is a leap year.");
-    else
-      System.out.println(year + " is not a leap year.");
-  }
+    public static boolean isLeapYear(int year) {
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+    }
 }
+
